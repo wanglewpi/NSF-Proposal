@@ -1,0 +1,97 @@
+\usepackage{geometry}
+\geometry{letterpaper,margin=1in}
+
+
+\usepackage{mathpazo}
+\usepackage[scale=0.95]{tgpagella}
+
+\usepackage[dvips]{graphicx}
+\usepackage[cmex10]{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb,amsfonts,latexsym}
+\usepackage[tight,footnotesize]{subfigure}
+\usepackage{float,epsfig}
+\usepackage{multirow}
+
+\usepackage[noend]{algorithmic}
+\usepackage{subeqnarray}
+\usepackage{enumerate}
+\usepackage{wrapfig}
+\usepackage{fancyhdr}
+\usepackage{soul}
+\usepackage{titlesec}
+\usepackage{url}
+\usepackage{tikz}
+\usepackage[tocindentauto]{tocstyle}
+\usepackage{cite}
+\usepackage[font={it,small}]{caption}
+\usepackage{epstopdf}
+\usepackage{color}
+\usepackage{ctable}
+\usepackage{hyperref}
+\hypersetup{
+	bookmarks= true,
+	colorlinks   = false,
+	linkcolor    = blue,
+	backref	 = true,
+	pdfborder={0 0 0},
+	urlcolor = blue,
+	citecolor = blue
+}
+\urlstyle{rm}
+
+\newtheorem{thm}{Theorem}
+\newtheorem{prop}{Proposition}
+\newtheorem{lem}{Lemma}
+\newtheorem{corl}{Corollary}
+\newtheorem{fact}{Fact}
+\newtheorem{prob}{Problem}
+
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}
+\newtheorem{asm}{Assumption}
+\newtheorem{rmk}{Remark}
+\newtheorem{exmp}{Example}
+
+
+
+\pagenumbering{arabic}
+\renewcommand{\thepage}{D--\arabic{page}}
+\setcounter{page}{1}
+
+\titleformat{\section}{\Large\bfseries\uppercase}{\thesection}{3ex}{}[\hrule]
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{3ex}{}
+\titleformat{\subsubsection}{\bfseries}{\thesubsubsection}{3ex}{}
+\titlespacing{\section}{0in}{6pt}{6pt}
+\titlespacing{\subsection}{0in}{6pt}{3pt}
+\titlespacing{\subsubsection}{0in}{3pt}{3pt}
+
+
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+
+
+\sloppy
+\hyphenpenalty = 10000
+\exhyphenpenalty = 10000
+
+
+\renewcommand\footrule{\begin{minipage}{1\textwidth}
+\noindent \hfil \rule{0.5\columnwidth}{1pt} \hfil
+\end{minipage}\par}%
+
+\lhead{}
+\rhead{}
+\lfoot{}
+
+\renewcommand{\thefigure}{\arabic{figure}}
+\renewcommand{\thetable}{\thesection.\arabic{table}}
+\renewcommand{\thesubsection}{\thesection.\alph{subsection}}
+
+\setlength{\abovedisplayskip}{0.3ex}
+\setlength{\belowdisplayskip}{0.3ex}
+\setlength{\parskip}{0.2ex}
+
+\def\figpath{figures}
+
+\linespread{0.95}

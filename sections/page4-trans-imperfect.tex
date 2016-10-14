@@ -1,0 +1,10 @@
+
+The wireless communication channel may cause several transmission 	imperfections and those imperfections will affect the control algorithms in two ways. 
+
+The first problem is the communication delay, which contains processing delay, transmission delay and propagation delay. Processing delay is generated when the wireless node creates messages, encode or decode messages etc. Transmission delay is the time used to transmit one message, i.e., message length/number of transmitted bits per second. Propagation delay is decided by the distance and communication environment between the transceivers. 
+
+Communication delay varies a lot based on different hardware specifications of each communication nodes. And the delay may cause the control instructions arriving at the receiver disordered. For example, we want a vehicle to fully stop before making a right turn. Due to the communication delay, however, the vehicle receives the right-turn instruction ahead of stop instruction and then behaves in an absolute different way. 
+
+Another impact on the control algorithms due to transmission imperfections is the loss of control messages. Generally, the messages lost is caused by two reasons: packet lost and packet corruption. Packet lost is the situation when the receiver never receives the packet due to the multi-path effects or interference from other node. Packet corruption means the receiver has errors in decoding the received messages, those errors may be result from the collision with the other nodes or the noise of the wireless channel. The packet corruption can be detected in the decoding process via CRC check. 
+
+Packet lost also causes severe problems on the control algorithm. Suppose the vehicle should make a fully stop at the red signal light. If the stop control message is lost, the vehicle will keep moving and cause accidents. The emergency message already use the most robust MCS available so  it need better power control to avoid lost of packages.  

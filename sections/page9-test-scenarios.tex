@@ -1,0 +1,33 @@
+
+\markup{Subsections from previous CPS proposal, included here as a template, change for this proposal}
+
+%%%%%%%%%%%%%%%%%%%%%%%%% NEW SUBSECTION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Connectivity Selection and Collision Threat Estimation}\label{sec-conn-selection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%% NEW SUBSECTION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Trajectory Planning: Method of Lifted Graphs}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%% NEW SUBSECTION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Software-Defined Radio for Threat Reduction} 
+\label{sec-sdr}
+
+%%%%%%%%%%%%%%%%%%%%%%%%% NEW SUBSECTION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Experimental Validation}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%% NEW SUBSECTION %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Tools}
+
+\subsubsection{Simulation of Urban Mobility ( SUMO)}
+The SUMO\cite{SUMO2012} is a traffic simulation available since 2001. It uses single vehicles models driving in a given road from a defined route. Each car is defined by a unique identifier, the depart time and route. Car-following models are use to define the current speed of vehicle based on distance and speed of the lead vehicle.\cite{krauss1998microscopic}. This behavior of the cars can be change using external algorithms and TRACI in \ref{tracipart} shows how. The simulation is a time-discrete simulation. The defaults step is 1s but it can lower to 1ms.   
+
+The roads defined in the scenario files are represented in simulation as graphs. The intersections are node and the road are edges. This road networks can be generated manually or imported from a digital road map like VISUM\cite{VISUM} or OpenStreetMap\cite{OPENSTREETMAP}. The available digital road networks are deigns for navigation. So they lack the detail need for traffic simulations like traffic lights and lane information, so the SUMO tools use heuristics that have more details in\cite{krajzewicz2005preparation} . 
+
+Another important aspect is the definition of routes inside the simulations. SUMO needs the complete list of connect edges , start and end time of the vehicle. However Traci can use an external control algorithm to modify the  route. 
+
+\subsubsection{Traci}
+\label{tracipart}
+In 2006, the SUMO was extend to make interactive simulation using socket connection. The API called TraCI for "Traffic Control Interface".\cite{wegener2008traci} The behavior is client and server structure. The SUMO start listen to a defined port for incoming connections. When a client connect, it is responsible for the main simulation loop and it have access of almost all simulations artifacts.
+
+The client implementation can be coded in Python, Java or any language that support a tcp socket. The main focus will be the traci for matlab. \cite{TraCI4Matlab}. 
